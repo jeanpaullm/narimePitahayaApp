@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FieldInput">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_idPlanta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/tv_primordios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:text="@string/cantidadPrimordios" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/b_menosPrimordios"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="decrementPrimordios"
+                android:text="@string/menos" />
+
+            <TextView
+                android:id="@+id/tv_primordiosCounter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="@string/cero" />
+
+            <Button
+                android:id="@+id/b_masPrimordios"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="incrementPrimordios"
+                android:text="@string/mas" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_flores"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:text="@string/cantidadFlores" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/b_menosFlores"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/menos"
+                android:onClick="decrementFlores"/>
+
+            <TextView
+                android:id="@+id/tv_floresCounter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="@string/cero" />
+
+            <Button
+                android:id="@+id/b_masFlores"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/mas"
+                android:onClick="incrementFlores"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_frutosVerdes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:text="@string/cantidadFrutosVerdes" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/b_menosFrutosVerdes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/menos"
+                android:onClick="decrementFrutosVerdes"/>
+
+            <TextView
+                android:id="@+id/tv_frutosVerdesCounter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="@string/cero" />
+
+            <Button
+                android:id="@+id/b_masFrutosVerdes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/mas"
+                android:onClick="incrementFrutosVerdes"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_frutosPintones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:text="@string/cantidadFrutosPintones" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/b_menosFrutosPintones"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/menos"
+                android:onClick="decrementFrutosPintones"/>
+
+            <TextView
+                android:id="@+id/tv_frutosPintonesCounter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="@string/cero" />
+
+            <Button
+                android:id="@+id/b_masFrutosPintones"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/mas"
+                android:onClick="incrementFrutosPintones"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_frutosMaduros"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:text="@string/cantidadFrutosMaduros" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/b_menosFrutosMaduros"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/menos"
+                android:onClick="decrementFrutosMaduros"/>
+
+            <TextView
+                android:id="@+id/tv_frutosMadurosCounter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="@string/cero" />
+
+            <Button
+                android:id="@+id/b_masFrutosMaduros"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/mas"
+                android:onClick="incrementFrutosMaduros"/>
+
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/cb_bacterias"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bacterias"
+            android:onClick="checkBacterias"
+            android:layout_weight="1"/>
+
+        <CheckBox
+            android:id="@+id/cb_hongos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hongos"
+            android:onClick="checkHongos"
+            android:layout_weight="1"/>
+
+        <CheckBox
+            android:id="@+id/cb_insectos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/insectos"
+            android:onClick="checkInsectos"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/b_registrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/registrar"
+            android:onClick="alertMiedo"/>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">HyloInterface</string>
+    <string name="registro">Registro</string>
+    <string name="cantidadPrimordios">Cantidad de Primordios:</string>
+    <string name="cantidadFlores">Cantidad de Flores:</string>
+    <string name="cantidadFrutosVerdes">Cantidad de Frutos Verdes:</string>
+    <string name="cantidadFrutosPintones">Cantidad de Frutos Pintones:</string>
+    <string name="cantidadFrutosMaduros">Cantidad de Frutos Maduros:</string>
+    <string name="cero">0</string>
+    <string name="menos">-</string>
+    <string name="mas">+</string>
+    <string name="bacterias">Presencia de bacterias</string>
+    <string name="hongos">Presencia de hongos</string>
+    <string name="insectos">Presencia de insectos</string>
+    <string name="registrar">Registrar informacion</string>
+</resources>
