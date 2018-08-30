@@ -42,13 +42,13 @@ public class FieldInput extends AppCompatActivity {
         setContentView(R.layout.activity_field_input);
 
         String clientId = MqttClient.generateClientId();
-        client = new MqttAndroidClient(this.getApplicationContext(), "tcp://spectacular-hairdresser.cloudmqtt.com:1883",
+        client = new MqttAndroidClient(this.getApplicationContext(), "tcp://m10.cloudmqtt.com:14077",
                         clientId);
 
         MqttConnectOptions options = new MqttConnectOptions();
         String topic = "hwthon/hylo/+";
-        options.setUserName("hkadwsqx");
-        options.setPassword("BCTi-JnC_3Hg".toCharArray());
+        options.setUserName("owqhlrel");
+        options.setPassword("LAuKYqnFO9cM".toCharArray());
 
         try {
             IMqttToken token = client.connect(options);
@@ -211,13 +211,13 @@ public class FieldInput extends AppCompatActivity {
         String payload = gson.toJson(informe);
 
         byte[] encodedPayload = new byte[0];
-        displayValue("intentando enviar info...");
+        displayValue("intentando enviar informacion...");
 
         try {
             encodedPayload = payload.getBytes("UTF-8");
             MqttMessage message = new MqttMessage(encodedPayload);
             client.publish(topic, message);
-            displayValue("info enviada");
+            displayValue("informacion enviada con exito");
         } catch (UnsupportedEncodingException | MqttException e) {
             e.printStackTrace();
         }
@@ -244,13 +244,13 @@ public class FieldInput extends AppCompatActivity {
 
     public void alertMiedo(View view) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Confirm dialog demo !");
-        builder.setMessage("You are about to delete all records of database. Do you really want to proceed ?");
+        builder.setTitle("Desea registrar esta informacion?");
+        //builder.setMessage("You are about to delete all records of database. Do you really want to proceed ?");
         builder.setCancelable(false);
-        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("Si", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(getApplicationContext(), "You've choosen to delete all records", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "Se ha registrado la informacion con exito.", Toast.LENGTH_SHORT).show();
                 enviarInformacion();
                 realertMiedo();
             }
@@ -259,7 +259,7 @@ public class FieldInput extends AppCompatActivity {
         builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(getApplicationContext(), "You've changed your mind to delete all records", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "You've changed your mind to delete all records", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -268,13 +268,13 @@ public class FieldInput extends AppCompatActivity {
 
     public void realertMiedo(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Confirm dialog demo !");
-        builder.setMessage("You are about to delete all records of database. Do you really want to proceed ?");
+        builder.setTitle("Desea realizar otro registro?");
+        //builder.setMessage("You are about to delete all records of database. Do you really want to proceed ?");
         builder.setCancelable(false);
-        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("Si", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(getApplicationContext(), "You've choosen to delete all records", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "La tarea se ha almacenado como realizada", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getBaseContext(), LectorQR.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
@@ -284,7 +284,6 @@ public class FieldInput extends AppCompatActivity {
         builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(getApplicationContext(), "You've changed your mind to delete all records", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getBaseContext(), MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);

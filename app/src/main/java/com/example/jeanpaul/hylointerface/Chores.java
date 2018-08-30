@@ -71,7 +71,7 @@ public class Chores extends AppCompatActivity {
                         final BotonDinamico button = new BotonDinamico(this);
                         button.setIdInforme(informe.getIdInforme());
                         button.setIdTarea(tarea.getIdTarea());
-                        button.setText("Id planta: " + informe.getIdPlanta() + "\nAccion: " + tarea.getPatogeno());
+                        button.setText("Planta: " + informe.getIdPlanta() + "\nTarea: " + tarea.getPatogeno());
                         button.setOnClickListener(new View.OnClickListener() {
                                                       @Override
                                                       public void onClick(View v) {
@@ -79,7 +79,6 @@ public class Chores extends AppCompatActivity {
                                                       }
                                                   });
                         choreContainer.addView(button);
-                        Log.d("sup", "boton creado \n");
                     }
                 }
             }
@@ -88,13 +87,13 @@ public class Chores extends AppCompatActivity {
 
     public void realertMiedo(final BotonDinamico buton){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Confirm dialog demo !");
-        builder.setMessage("You are about to delete all records of database. Do you really want to proceed ?");
+        builder.setTitle("Desea confirmar que se realizo esta tarea?");
+        //builder.setMessage("You are about to delete all records of database. Do you really want to proceed ?");
         builder.setCancelable(false);
-        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("Si", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(getApplicationContext(), "You've choosen to delete all records", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "La tarea se ha actualizado exitosamente", Toast.LENGTH_SHORT).show();
                 buton.completeChore();
                 try {
                     Thread.sleep(500);
@@ -108,12 +107,12 @@ public class Chores extends AppCompatActivity {
 
         builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
+            public void onClick(DialogInterface dialog, int which) {/*
                 Toast.makeText(getApplicationContext(), "You've changed your mind to delete all records", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getBaseContext(), MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
-            }
+          */}
         });
 
         builder.show();
@@ -132,11 +131,7 @@ class BotonDinamico extends android.support.v7.widget.AppCompatButton {
 
     public void completeChore() {
 
-        Log.d("sup", "maemaemaemeamemaaemmmmmmmmmmmmmmmmmmmmmmmmmmaeeeeeee");
-
         String jsonStringRequest = "{\"idInforme\":" + idInforme + ",\"idTarea\":" + idTarea + "}";
-
-        Log.d("sup", jsonStringRequest);
 
         NetworkManager.getInstance().put(jsonStringRequest, new customListener<String>() {
             @Override
